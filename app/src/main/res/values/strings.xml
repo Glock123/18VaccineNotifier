@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Vaccinate ME!</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_favourite">Favourite</string>
+    <string name="pin_code_hint">Enter PinCode</string>
+</resources>

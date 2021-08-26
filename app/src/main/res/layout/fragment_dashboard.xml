@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="7dp"
+        tools:context=".ui.dashboard.DashboardFragment">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:focusable="true"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pincode_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconTint="@color/black"
+            app:helperTextTextColor="@color/red"
+            app:endIconMode="custom"
+            app:errorIconDrawable="@null"
+            app:endIconDrawable="@drawable/ic_baseline_search_24"
+            app:counterEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pincode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                android:hint="@string/pin_code_hint"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_centers"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.7"
+                    android:text="Filter"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="20sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3">
+
+                    <RadioGroup
+                        android:id="@+id/age_group"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:contentDescription="Age group"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <RadioButton
+                            android:id="@+id/eighteen_to_fourty_four"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="start"
+                            android:textSize="12sp"
+                            android:layout_height="wrap_content"
+                            android:text="Age 18-44 only"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Age 45+ only"
+                            android:layout_gravity="start"
+                            android:id="@+id/above_fourty_five" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="12sp"
+                            android:layout_height="wrap_content"
+                            android:text="Age 18 and above"
+                            android:layout_gravity="start"
+                            android:id="@+id/eighteen_and_above" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="If want to select all age groups, then DO NOT select any option, i.e. press Clear"/>
+                        <Button
+                            android:id="@+id/age_clear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Clear"/>
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@android:color/darker_gray"/>
+
+                    <RadioGroup
+                        android:id="@+id/dose_number"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:contentDescription="Age group"
+                        android:weightSum="2"
+                        android:layout_weight="1">
+                        <RadioButton
+                            android:id="@+id/dose1"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="start"
+                            android:layout_height="wrap_content"
+                            android:text="Dose 1"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Dose 2"
+                            android:layout_gravity="start"
+                            android:id="@+id/dose2" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="If want to select both doses, then DO NOT select any option, i.e. press Clear"/>
+                        <Button
+                            android:id="@+id/dose_clear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Clear"/>
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="5dp"
+                        android:background="@android:color/darker_gray"/>
+
+                    <RadioGroup
+                        android:id="@+id/vaccine_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="Age group"
+                        android:weightSum="3"
+                        android:layout_weight="1">
+                        <RadioButton
+                            android:id="@+id/covaxin"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="start"
+                            android:layout_height="wrap_content"
+                            android:text="Covaxin"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Covishield"
+                            android:textSize="12sp"
+                            android:layout_gravity="start"
+                            android:id="@+id/covishield" />
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Sputnik V"
+                            android:layout_gravity="start"
+                            android:id="@+id/sputnik" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="If want to select all vaccine types, then DO NOT select any option, i.e. press Clear"/>
+                        <Button
+                            android:id="@+id/vaccine_clear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Clear"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbarSize="3dp"
+                    android:id="@+id/rv_hospital_names"
+                    android:orientation="vertical"/>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+    </LinearLayout>
+</ScrollView>

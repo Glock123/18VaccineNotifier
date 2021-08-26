@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    android:elevation="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/filter_hospital_name"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:text="ORDNANCE HOSPITAL JNJKVNDKJDVNJDVV DJKDDJCN "
+            android:textSize="15sp"/>
+        <ToggleButton
+            android:id="@+id/filter_toggle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textOff=""
+            android:textOn=""
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
